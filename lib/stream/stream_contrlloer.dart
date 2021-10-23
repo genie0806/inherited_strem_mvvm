@@ -23,12 +23,7 @@ class StreamControllerSample extends StatelessWidget {
             child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            StreamBuilder<int>(
-              stream: viewModel.countStream,
-              builder: (BuildContext context, AsyncSnapshot snapshot) {
-                return Text('${snapshot.data}');
-              },
-            ),
+            Text('${viewModel.count}'),
             ElevatedButton(
               onPressed: () {
                 viewModel.countincrement();

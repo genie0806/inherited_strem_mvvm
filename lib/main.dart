@@ -20,7 +20,7 @@ class Myapp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         title: 'demo',
-        home: Provider(
+        home: ChangeNotifierProvider(
             create: (_) => StreamViewModel(),
             child: const StreamControllerSample()));
   }
