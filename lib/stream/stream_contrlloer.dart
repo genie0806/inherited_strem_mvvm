@@ -12,7 +12,6 @@ class StreamControllerSample extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final viewModel = Provider.of<StreamViewModel>(context);
     return Scaffold(
       appBar: AppBar(
         title: const Text('streamController'),
@@ -23,10 +22,13 @@ class StreamControllerSample extends StatelessWidget {
             child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('${viewModel.count}'),
+            Consumer<StreamViewModel>(
+                builder: (_, viewModel, Widget? child) =>
+                    Text('${viewModel.count}')),
             ElevatedButton(
               onPressed: () {
-                viewModel.countincrement();
+                Provider.of<StreamViewModel>(context, listen: false)
+                    .countincrement();
               },
               child: const Text('클릭'),
             ),
