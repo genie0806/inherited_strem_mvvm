@@ -18,6 +18,6 @@ class CounterInheritedWidget extends InheritedWidget {
 
   @override
   bool updateShouldNotify(CounterInheritedWidget oldWidget) {
-    return oldWidget.counter.countStream != counter.countStream;
+    return oldWidget.counter.count != counter.count;
   }
 }

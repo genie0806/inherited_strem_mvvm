@@ -1,4 +1,3 @@
-import 'package:exam_inherited_mvvm/stream/counter.dart';
 import 'package:exam_inherited_mvvm/stream/counter_inheritedwidget.dart';
 import 'package:flutter/material.dart';
 
