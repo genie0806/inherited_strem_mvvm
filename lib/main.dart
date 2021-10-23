@@ -7,6 +7,7 @@ import 'package:exam_inherited_mvvm/stream/stream_contrlloer.dart';
 import 'package:exam_inherited_mvvm/stream/stream_inherited.dart';
 import 'package:exam_inherited_mvvm/stream/stream_sample_view_model.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyColor(child: Myapp(), color: Colors.red));
@@ -19,7 +20,8 @@ class Myapp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         title: 'demo',
-        home: StreamViewModelInheritedWidget(
-            viewModel: StreamViewModel(), child: const StreamControllerSample()));
+        home: Provider(
+            create: (_) => StreamViewModel(),
+            child: const StreamControllerSample()));
   }
 }

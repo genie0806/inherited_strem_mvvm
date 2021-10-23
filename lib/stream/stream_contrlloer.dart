@@ -1,14 +1,18 @@
 import 'package:exam_inherited_mvvm/stream/counter.dart';
 import 'package:exam_inherited_mvvm/stream/counter_inheritedwidget.dart';
 import 'package:exam_inherited_mvvm/stream/stream_inherited.dart';
+import 'package:exam_inherited_mvvm/stream/stream_sample_view_model.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class StreamControllerSample extends StatelessWidget {
- const StreamControllerSample({Key? key,}) : super(key: key);
+  const StreamControllerSample({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final viewModel = StreamViewModelInheritedWidget.of(context)!.viewModel;
+    final viewModel = Provider.of<StreamViewModel>(context);
     return Scaffold(
       appBar: AppBar(
         title: const Text('streamController'),
